@@ -25,8 +25,10 @@ HRESULT BuggyHouse::Initialize(HINSTANCE hInstance, LPCWSTR title, UINT width, U
 void BuggyHouse::Render()
 {
     mspRenderTarget->BeginDraw();
+    mspRenderTarget->SetTransform(D2D1::Matrix3x2F::Identity());
     mspRenderTarget->Clear(D2D1::ColorF(0.0f, 0.2f, 0.4f, 1.0f));
 
+  
     mspBackground->Draw();
 
     for (auto& bug : mBugList)
